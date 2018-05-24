@@ -1,0 +1,32 @@
+﻿@using Lab22._5_StatementManagement.Controllers
+
+@{
+    ViewBag.Title = "Login";
+}
+
+
+
+<center>
+    <div class="alert alert-info">
+        <h2><strong>Thank You!</strong></h2>
+    </div>
+</center>
+<h2>
+    @ViewBag.UserName was entered as the User Name.<br />
+
+    @ViewBag.ColorChoice was selected as your Color Choice.<br />
+
+    @ViewBag.Password was entered as the Password.<br />
+
+    In this session, you have set @Session["Counter"] values; one for each field.
+</h2>
+
+<div>
+    <p><a class="btn btn-primary btn-lg" href="/Home/Logout">LogOFF&raquo;</a></p>
+</div>
+
+
+
+
+
+
