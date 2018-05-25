@@ -2,34 +2,43 @@
     ViewBag.Title = "Home Page";
 }
 
-<center>
-    <div class="jumbotron">
-        <h1>Welcome!</h1>
-    </div>
-    <br />
-</center>
-<h2>Please enter all information for Login:</h2>
+<style>
+    body {
+        background-color: @ViewBag.colorChoice;
+    }
+</style>
 
-<form action="/Home/Login" class="form1" onsubmit="return validUserName()">
+<body>
+    <center>
+        <div class="jumbotron">
+            <h1>Welcome!</h1>
+        </div>
+        <br />
+    </center>
+    <h2>Please enter all information for Login:</h2>
 
-    <input type="text" id="user" name="userName" placeholder="UserName" /><br /><br />
+    <form action="/Home/Login" class="form1" onsubmit="return validUserName(), selectedColor()">
 
-    <select id="colors" name="colorChoice" placeholder="Choose Color">
-        <option value="Select Color">Select Color</option>
-        <option value="black">Black</option>
-        <option value="grey">Grey</option>
-        <option value="red">Red</option>
-        <option value="orange">Orange</option>
-        <option value="yellow">Yellow</option>
-        <option value="green">Green</option>
-        <option value="blue">Blue</option>
-        <option value="purple">Purple</option>
-    </select><br /><br />
+        <input type="text" id="user" name="userName" placeholder="UserName" /><br /><br />
 
-    <input type="text" id="password" name="passWord1" placeholder="Password" /><br /><br />
+        <select id="colors" name="colorChoice" placeholder="Choose Color">
+            <option value="Select Color">Select Color</option>
+            <option value="black">Black</option>
+            <option value="grey">Grey</option>
+            <option value="red">Red</option>
+            <option value="orange">Orange</option>
+            <option value="yellow">Yellow</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="purple">Purple</option>
+        </select><br /><br />
 
-    <input type="submit" value="Submit" class="btn btn-primary btn-lg" />
-</form>
+        <input type="text" id="password" name="passWord1" placeholder="Password" /><br /><br />
+
+        <input type="submit" value="Submit" class="btn btn-primary btn-lg" />
+    </form>
+</body>
+
 
 <script>
 
@@ -46,7 +55,7 @@
     }
 </script>
 
-<script>
+@*<script>
     function selectedColor()
     var colorselect = "black"
     var changebackground = document.getElementById("black").value;
@@ -54,9 +63,10 @@
         return true;
     }
     else if (colorselect.test(grey)) {
-        return
-        <body style="background-color:silver;"></body>
-            true;
+        document.body.style.backgroundColor = ViewBag.colorChoice;
+        //return
+        //<body style="background-color:silver;"></body>
+        //    true;
     }
     else if (colorselect.test(red)) {
         return
@@ -89,5 +99,5 @@
         true;
     }
 
-</script>
+</script>*@
 

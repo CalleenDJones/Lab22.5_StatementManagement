@@ -41,12 +41,9 @@ namespace Lab22._5_StatementManagement.Controllers
             return View();
         }
 
-        public ActionResult Login()
-        {
-            return View();
-        }
+       
 
-            public ActionResult Welcome
+            public ActionResult Login
             (string userName = "Anyname", string colorChoice = "Gold", string passWord1 = "password")
         {
             //ActionResults
